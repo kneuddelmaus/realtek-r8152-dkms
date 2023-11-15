@@ -69,7 +69,7 @@ Download or clone this repository and move to the extracted directory, then run 
 sudo ./autorun.sh
 ```
 
-### dkms-install.sh
+### dkms-install.sh (For Truenas SCALE)
 
 This script is from aircrack-ng team. You can install the DKMS module by a simple command.
 
