@@ -36,6 +36,7 @@ modinfo r8152
 modprobe r8152
 depmod -a
 update-initramfs -u
+midclt call system.advanced.update '{"kernel_extra_options": "modprobe=r8152"}' 
 
 echo "Finished."
 
