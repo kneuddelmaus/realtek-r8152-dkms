@@ -13,6 +13,7 @@ DRV_VERSION=2.17.1
 
 chmod +x /bin/dpkg*
 chmod +x /bin/apt*
+apt-get update
 apt-get install build-essential dkms devscripts libelf-dev inxi usbutils -y
 
 cp -r ${DRV_DIR} /usr/src/${DRV_NAME}-${DRV_VERSION}
