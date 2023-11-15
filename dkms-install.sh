@@ -16,7 +16,7 @@ RULEFILE=udev/rules.d/50-usb-realtek-net.rules
 cp -r ${DRV_DIR} /usr/src/${DRV_NAME}-${DRV_VERSION}
 
 dkms add -m ${DRV_NAME} -v ${DRV_VERSION}
-dkms build -m ${DRV_NAME} -v ${DRV_VERSION}
+dkms build -m ${DRV_NAME} -v ${DRV_VERSION} --force
 dkms install -m ${DRV_NAME} -v ${DRV_VERSION} --force
 RESULT=$?
 
