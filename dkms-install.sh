@@ -10,6 +10,8 @@ fi
 DRV_DIR="$(pwd)"
 DRV_NAME=r8152
 DRV_VERSION=2.17.1
+RULEDIR=/lib/udev/rules.d/
+RULEFILE=udev/rules.d/50-usb-realtek-net.rules
 
 cp -r ${DRV_DIR} /usr/src/${DRV_NAME}-${DRV_VERSION}
 
@@ -21,10 +23,16 @@ RESULT=$?
 echo "Finished running dkms install steps."
 
 echo "Copy the dedicated udev rules file..."
-cp udev/rules.d/50-usb-realtek-net.rules /lib/udev/rules.d/
+install --group=root --owner=root --mode=0644 $(RULEFILE) $(RULEDIR)
+depmod -a
 
 echo "Restarting udev..."
 udevadm control --reload-rules
+
+modinfo r8152
+modprobe r8152
+depmod -a
+update-initramfs -u
 
 echo "Finished."
 
