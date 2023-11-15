@@ -42,7 +42,9 @@ ifneq ($(INBOXDRIVER),)
 	rm -f $(INBOXDRIVER)
 endif
 	$(MAKE) -C $(KERNELDIR) M=$(PWD) INSTALL_MOD_DIR=$(TARGET_PATH) modules_install
+	depmod -a
 	modprobe r8152
+	update-initramfs -u
 
 .PHONY: install_rules
 install_rules:

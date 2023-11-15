@@ -22,7 +22,7 @@ else
 fi
 
 echo "Removing the dedicated udev rules file..."
-rm /etc/udev/rules.d/50-usb-realtek-net.rules
+rm /lib/udev/rules.d/50-usb-realtek-net.rules
 
 echo "Restarting udev..."
 udevadm control --reload-rules
