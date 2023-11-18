@@ -24,7 +24,6 @@ fi
 echo "Removing the dedicated udev rules file..."
 rm /lib/udev/rules.d/50-usb-realtek-net.rules
 depmod -a
-update-initramfs -u
 
 echo "Restarting udev..."
 udevadm control --reload-rules
