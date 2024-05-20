@@ -11,9 +11,14 @@ DRV_DIR="$(pwd)"
 DRV_NAME=r8152
 DRV_VERSION=2.17.1
 
-chmod +x /bin/dpkg*
-chmod +x /bin/apt*
-apt-get update
+# chmod +x /bin/dpkg*
+# chmod +x /bin/apt*
+# apt-get update
+
+# Enable apt and friends on Truenas Scale DragonFish
+# https://www.truenas.com/community/threads/no-apt-after-update-to-release.99579/page-4#post-808108
+# "install-dev-tools" or /usr/local/libexec/disable-rootfs-protection
+install-dev-tools
 apt-get install nala -y
 nala install build-essential dkms devscripts libelf-dev inxi usbutils -y
 
