@@ -20,7 +20,7 @@ DRV_VERSION=2.17.1
 # "install-dev-tools" or /usr/local/libexec/disable-rootfs-protection
 install-dev-tools
 apt-get install nala -y
-nala install build-essential dkms devscripts libelf-dev inxi usbutils -y
+nala install build-essential dkms devscripts libelf-dev inxi usbutils dkms -y
 
 cp -r ${DRV_DIR} /usr/src/${DRV_NAME}-${DRV_VERSION}
 
