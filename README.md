@@ -6,12 +6,19 @@ This provides Realtek r8152 driver in DKMS way so that you can keep the latest d
 
 ## Compatibility
 
-The RTL8152 driver supports the following USB Ethernet chipsets.
+The r8152 driver supports the following USB Ethernet chipsets.
 
-- **RTL8156 / RTL8156B(S)(G)**: 2.5 GbE (USB 3.0)
-- **RTL8153 / RTL8153B**: 10/100/1000 MbE (USB 3.0)
-- **RTL8154 / RTL8154B**: 10/100/1000 MbE (USB 2.0)
-- **RTL8152B**: 10/100M (USB2.0)
+> Refers to the official websites, you can check it at the bottom of this document
+>
+> *For RTL8157 (5 GbE), you need 2.18.1 or above*
+
+Chipset          | Interface   | Performance
+:----------------|:-----------:|:----------------:
+RTL8157          | USB 3.0     | 5 GbE
+RTL8156 /B       | USB 3.0     | 2.5 GbE
+RTL8153 /B/C/D/E | USB 3.0     | 10/100/1000 MbE
+RTL8154 /B       | USB 2.0     | 10/100/1000 MbE
+RTL8152B         | USB 2.0     | 10/100M
 
 ## Installation
 
@@ -30,7 +37,7 @@ Download the latest Debian package from the Release tab on the Github repository
 Then enter the following command.
 
 ```bash
-sudo dpkg -i realtek-r8152-dkms*.deb
+sudo dpkg -i realtek-r8152-dkms-2.19.2-1*.deb
 ```
 
 > If multiple files selected by the wild card, you should type the specific version of the file.
@@ -84,7 +91,7 @@ sudo ./dkms-install.sh
 You can build yourself this after installing some dependencies including `dkms`.
 
 ```bash
-sudo apt install devscripts debmake debhelper build-essential dkms
+sudo apt install devscripts debmake debhelper build-essential dkms dh-dkms
 ```
 
 ```bash
@@ -97,4 +104,4 @@ GPL-2 on Realtek driver and the debian packaing.
 
 ## References
 
-- [Realtek r8152 driver release page](https://www.realtek.com/en/component/zoo/category/network-interface-controllers-10-100-1000m-gigabit-ethernet-usb-3-0-software)
+- [Realtek r8152 driver downloads](https://www.realtek.com/Download/List?cate_id=585)
